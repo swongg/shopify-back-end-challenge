@@ -22,5 +22,6 @@ app.use(morgan('combined'))
 app.use(urlencoded({ extended: true }));
 app.use(json());
 app.use(cookieParser());
+app.set("port", process.env.PORT || 8080)
 
 export default app;
