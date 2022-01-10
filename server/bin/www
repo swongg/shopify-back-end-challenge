@@ -1,0 +1,11 @@
+import app from "../app"
+import errorHandler from "errorhandler";
+import http from "http";
+
+
+app.use(errorHandler());
+const port = process.env.PORT || "8080";
+app.set("port", port);
+
+const server = http.createServer(app);
+server.listen(port);

@@ -16,7 +16,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-// add middleware
+// express config
 app.use(cors(corsOptions));
 app.use(morgan('combined'))
 app.use(urlencoded({ extended: true }));
