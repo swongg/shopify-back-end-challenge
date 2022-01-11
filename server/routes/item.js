@@ -12,8 +12,5 @@ router.post("/", createItem);
 router.put("/:id", updateItem);
 router.delete("/:id", deleteItem);
 router.get("/", getAllItems);
-// router.get("/", (req, res) => {
-//   res.send('item route !');
-// })
 
 export default router;
