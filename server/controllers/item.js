@@ -1,4 +1,4 @@
-import {Item} from "../models/item";
+import { Item } from "../models/item";
 
 export const createItem = async (req, res) => {
   const item = new Item({
@@ -73,7 +73,7 @@ export const updateItem = async (req, res) => {
   }
 };
 
-export const getAllItems = async () => {
+export const getAllItems = async (req, res) => {
   const filter = {};
 
   try {
