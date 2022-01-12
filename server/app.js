@@ -21,6 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(morgan('combined'))
 app.use(urlencoded({ extended: true }));
+app.use(express.json());
 app.use(json());
 app.use(cookieParser());
 app.use("/", router);
