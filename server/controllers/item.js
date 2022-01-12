@@ -11,7 +11,7 @@ export const createItem = async (req, res) => {
     const existingItem = await Item.findOne({ name: req.body.name });
 
     if (existingItem) {
-      res.status(400).json({
+      return res.status(400).json({
         success: false,
         error: "Item of that name already exists in the inventory",
       });
@@ -34,8 +34,11 @@ export const createItem = async (req, res) => {
 export const deleteItem = async (req, res) => {
   try {
     const item = await Item.findByIdAndDelete(ObjectId(req.params.id));
+
     if (!item) {
-      return res.status(404).json({ success: false, error: "Item not found" });
+      return res
+        .status(404)
+        .json({ success: false, error: "Item with that id not found" });
     }
 
     return res.status(200).json({ success: true, item });
@@ -70,6 +73,22 @@ export const updateItem = async (req, res) => {
     return res
       .status(400)
       .json({ error: err, message: "Item was not updated" });
+  }
+};
+export const getItemById = async (req, res) => {
+  try {
+    const item = await Item.findById(ObjectId(req.params.id));
+    if (!item) {
+      return res
+        .status(404)
+        .json({ success: false, error: "Item with that id not found" });
+    }
+
+    return res.status(200).json({ success: true, item });
+  } catch (err) {
+    return res
+      .status(400)
+      .json({ error: err, message: "Could not fetch item" });
   }
 };
 
