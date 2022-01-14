@@ -2,19 +2,28 @@ import React, { useState } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { backendAddress } from "../constants";
+import axios from "axios";
+
+axios.defaults.baseURL = backendAddress;
 
 const InventoryTracker = () => {
   const [name, setName] = useState("");
-  const [count, setCount] = useState(0);
+  const [stock, setStock] = useState(0);
   const [category, setCategory] = useState("");
 
   const clearStates = () => {
     setName("");
-    setCount(0);
+    setStock(0);
     setCategory("");
   };
 
   const handleSubmit = () => {
+    axios.post(`/item`, {
+      name: name,
+      stock: stock,
+      category: category,
+    });
     clearStates();
   };
 
@@ -39,8 +48,8 @@ const InventoryTracker = () => {
           InputLabelProps={{
             shrink: true,
           }}
-          value={count}
-          onChange={(e) => setCount(e.target.value)}
+          value={stock}
+          onChange={(e) => setStock(e.target.value)}
         />
       </Box>
       <Box padding={2}>
