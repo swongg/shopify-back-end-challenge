@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
 import { getItems, addItem } from "../util/server";
 import Item from "./Item";
 
@@ -48,6 +47,7 @@ const InventoryTracker = () => {
           id="outlined-number"
           label="Count"
           type="number"
+          min="0"
           InputLabelProps={{
             shrink: true,
           }}
@@ -71,7 +71,11 @@ const InventoryTracker = () => {
 
       {inventory.map((item) => (
         <Box key={item._id} padding={2}>
-          <Item itemData={item} setInventoryUpdate={setInventoryUpdate} inventoryUpdate={inventoryUpdate} />
+          <Item
+            itemData={item}
+            setInventoryUpdate={setInventoryUpdate}
+            inventoryUpdate={inventoryUpdate}
+          />
         </Box>
       ))}
     </Box>

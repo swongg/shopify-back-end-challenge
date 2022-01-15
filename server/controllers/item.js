@@ -1,5 +1,5 @@
 import { Item } from "../models/item";
-import {ObjectId} from "./utils"
+import { ObjectId } from "./utils";
 
 export const createItem = async (req, res) => {
   const item = new Item({
@@ -26,15 +26,12 @@ export const createItem = async (req, res) => {
       message: "Item has been successfully added!",
     });
   } catch (err) {
-    return res.status(400).json({
-      error: err,
-      message: "Item was not added!",
-    });
+    // do nothing
   }
 };
 
 export const deleteItem = async (req, res) => {
-  console.log('logging the id');
+  console.log("logging the id");
   console.log(ObjectId(req.params.id));
   try {
     const item = await Item.findByIdAndDelete(ObjectId(req.params.id));
@@ -47,12 +44,14 @@ export const deleteItem = async (req, res) => {
 
     return res.status(200).json({ success: true, item });
   } catch (err) {
-    return res.status(400).json({ error: err, message: "Item not deleted" });
+    // do nothing
   }
 };
 
 export const updateItem = async (req, res) => {
   const updatedItem = req.body;
+
+  console.log(updatedItem);
   if (!updatedItem) {
     return res.status(400).json({
       success: false,
@@ -74,9 +73,7 @@ export const updateItem = async (req, res) => {
       }
     );
   } catch (err) {
-    return res
-      .status(400)
-      .json({ error: err, message: "Item was not updated" });
+    // do nothing
   }
 };
 export const getItemById = async (req, res) => {
@@ -90,13 +87,13 @@ export const getItemById = async (req, res) => {
 
     return res.status(200).json({ success: true, item });
   } catch (err) {
-    return res
-      .status(400)
-      .json({ error: err, message: "Could not fetch item" });
+    // do nothing
   }
 };
 
 export const getAllItems = async (req, res) => {
+  console.log("here i am");
+
   const filter = {};
 
   try {
