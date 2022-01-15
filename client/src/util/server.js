@@ -15,3 +15,15 @@ export const addItem = async (name, stock, category) => {
     category: category,
   });
 };
+
+export const deleteItem = async (id) => {
+  await axios.delete(`/item/${id}`).catch((err) => err);
+};
+
+export const editItem = async (id, name, stock, category) => {
+  await axios.put(`/item/${id}`, {
+    name: name,
+    stock: stock,
+    category: category,
+  });
+};
