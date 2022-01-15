@@ -13,7 +13,6 @@ const InventoryTracker = () => {
   const [stock, setStock] = useState(0);
   const [category, setCategory] = useState("");
   const [inventory, setInventory] = useState([]);
-  const [display, setDisplay] = useState(false);
 
   const clearStates = () => {
     setName("");
@@ -39,16 +38,6 @@ const InventoryTracker = () => {
       })
       .catch((err) => err);
   });
-
-  // const handleDisplay = () => {
-  //   setDisplay(!display);
-  //   axios
-  //     .get("/item")
-  //     .then((res) => {
-  //       setInventory(res.data.items);
-  //     })
-  //     .catch((err) => err);
-  // };
 
   return (
     <Box>
@@ -88,9 +77,7 @@ const InventoryTracker = () => {
           Submit
         </Button>
       </Box>
-      {/* <Button onClick={handleDisplay} variant="outlined">
-        Display All
-      </Button> */}
+
       {inventory.map((item) => (
         <Item key={item._id} itemData={item} />
       ))}
