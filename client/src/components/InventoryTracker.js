@@ -79,7 +79,9 @@ const InventoryTracker = () => {
       </Box>
 
       {inventory.map((item) => (
-        <Item key={item._id} itemData={item} />
+        <Box key={item._id} padding={2}>
+          <Item itemData={item} />
+        </Box>
       ))}
     </Box>
   );
