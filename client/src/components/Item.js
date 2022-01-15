@@ -32,7 +32,7 @@ const Item = ({ itemData, setInventoryUpdate, inventoryUpdate }) => {
       <Button onClick={handleDelete} >
         Delete
       </Button>
-      {modalOpen ? <EditModal setModalOpen={setModalOpen} handleEdit={handleEdit} /> : <Box />}
+      {modalOpen ? <EditModal itemData={itemData} setModalOpen={setModalOpen} handleEdit={handleEdit} /> : <Box />}
     </Box>
   );
 };
