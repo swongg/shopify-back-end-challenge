@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { backendAddress } from "../constants";
+import Item from "./Item";
 import axios from "axios";
 
 axios.defaults.baseURL = backendAddress;
@@ -11,6 +12,7 @@ const InventoryTracker = () => {
   const [name, setName] = useState("");
   const [stock, setStock] = useState(0);
   const [category, setCategory] = useState("");
+  const [inventory, setInventory] = useState([]);
 
   const clearStates = () => {
     setName("");
@@ -26,6 +28,16 @@ const InventoryTracker = () => {
     });
     clearStates();
   };
+
+  useEffect(() => {
+    axios
+      .get("/item")
+      .then((res) => {
+        let inventoryArr = res.data.items;
+        setInventory(inventoryArr);
+      })
+      .catch((err) => err);
+  });
 
   return (
     <Box>
@@ -65,6 +77,10 @@ const InventoryTracker = () => {
           Submit
         </Button>
       </Box>
+
+      {inventory.map((item) => (
+        <Item key={item._id} itemData={item} />
+      ))}
     </Box>
   );
 };
