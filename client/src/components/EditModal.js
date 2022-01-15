@@ -3,16 +3,17 @@ import Box from "@material-ui/core/Box";
 import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 
-const EditModal = ({ handleEdit, setModalOpen }) => {
-  const [name, setName] = useState("");
-  const [stock, setStock] = useState(0);
-  const [category, setCategory] = useState("");
+const EditModal = ({ itemData, handleEdit, setModalOpen }) => {
+  const [name, setName] = useState(itemData.name);
+  const [stock, setStock] = useState(itemData.stock);
+  const [category, setCategory] = useState(itemData.category);
   return (
     <Box>
       <Box padding={2}>
         <Input
           type="string"
           placeholder="Edit Name"
+          value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -23,6 +24,7 @@ const EditModal = ({ handleEdit, setModalOpen }) => {
           min="0"
           type="number"
           placeholder="Edit Stock"
+          value={stock}
           onChange={(e) => {
             setStock(e.target.value);
           }}
@@ -32,6 +34,7 @@ const EditModal = ({ handleEdit, setModalOpen }) => {
         <Input
           type="string"
           placeholder="Edit Category"
+          value={category}
           onChange={(e) => {
             setCategory(e.target.value);
           }}
