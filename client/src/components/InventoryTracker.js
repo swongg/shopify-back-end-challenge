@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { backendAddress } from "../constants";
-import Item from "./Item";
-import axios from "axios";
 
-axios.defaults.baseURL = backendAddress;
+import { getItems, addItem } from "../util/server";
+import Item from "./Item";
 
 const InventoryTracker = () => {
   const [name, setName] = useState("");
   const [stock, setStock] = useState(0);
   const [category, setCategory] = useState("");
   const [inventory, setInventory] = useState([]);
+  const [inventoryUpdate, setInventoryUpdate] = useState([false]);
 
   const clearStates = () => {
     setName("");
@@ -20,24 +19,16 @@ const InventoryTracker = () => {
     setCategory("");
   };
 
-  const handleSubmit = () => {
-    axios.post(`/item`, {
-      name: name,
-      stock: stock,
-      category: category,
-    });
+  const handleSubmit = async () => {
+    await addItem(name, stock, category);
+    setInventoryUpdate(!inventoryUpdate);
     clearStates();
   };
 
-  useEffect(() => {
-    axios
-      .get("/item")
-      .then((res) => {
-        let inventoryArr = res.data.items;
-        setInventory(inventoryArr);
-      })
-      .catch((err) => err);
-  });
+  useEffect(async () => {
+    let inventoryArr = await getItems();
+    setInventory(inventoryArr);
+  }, [inventoryUpdate]);
 
   return (
     <Box>

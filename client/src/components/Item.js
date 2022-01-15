@@ -12,7 +12,7 @@ const Item = ({ itemData }) => {
     <Box>
       <Typography variant="h5">{`Name: ${itemData.name}`}</Typography>
       <Typography variant="h6">{`Stock: ${itemData.stock}`}</Typography>
-      <Typography variant="h6">{`Count: ${itemData.category}`}</Typography>
+      <Typography variant="h6">{`Category: ${itemData.category}`}</Typography>
       <Button>Edit</Button>
       <Button>Delete</Button>
     </Box>

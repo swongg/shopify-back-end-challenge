@@ -1,0 +1,17 @@
+import axios from "axios";
+import { backendAddress } from "../constants";
+axios.defaults.baseURL = backendAddress;
+
+export const getItems = async () => {
+  let response = await axios.get("/item").catch((err) => err);
+  let inventoryArr = response.data.items;
+  return inventoryArr;
+};
+
+export const addItem = async (name, stock, category) => {
+  await axios.post(`/item`, {
+    name: name,
+    stock: stock,
+    category: category,
+  });
+};
