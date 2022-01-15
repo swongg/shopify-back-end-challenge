@@ -31,8 +31,6 @@ export const createItem = async (req, res) => {
 };
 
 export const deleteItem = async (req, res) => {
-  console.log("logging the id");
-  console.log(ObjectId(req.params.id));
   try {
     const item = await Item.findByIdAndDelete(ObjectId(req.params.id));
 
@@ -51,7 +49,6 @@ export const deleteItem = async (req, res) => {
 export const updateItem = async (req, res) => {
   const updatedItem = req.body;
 
-  console.log(updatedItem);
   if (!updatedItem) {
     return res.status(400).json({
       success: false,
@@ -92,8 +89,6 @@ export const getItemById = async (req, res) => {
 };
 
 export const getAllItems = async (req, res) => {
-  console.log("here i am");
-
   const filter = {};
 
   try {
