@@ -16,6 +16,7 @@ export const createItem = async (req, res) => {
         error: "Item of that name already exists in the inventory",
       });
     }
+
     await item.save();
 
     return res.status(201).json({
