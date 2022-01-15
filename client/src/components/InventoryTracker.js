@@ -71,7 +71,7 @@ const InventoryTracker = () => {
 
       {inventory.map((item) => (
         <Box key={item._id} padding={2}>
-          <Item itemData={item} />
+          <Item itemData={item} setInventoryUpdate={setInventoryUpdate} inventoryUpdate={inventoryUpdate} />
         </Box>
       ))}
     </Box>

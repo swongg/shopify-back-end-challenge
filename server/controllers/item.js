@@ -1,4 +1,5 @@
 import { Item } from "../models/item";
+import {ObjectId} from "./utils"
 
 export const createItem = async (req, res) => {
   const item = new Item({
@@ -33,6 +34,8 @@ export const createItem = async (req, res) => {
 };
 
 export const deleteItem = async (req, res) => {
+  console.log('logging the id');
+  console.log(ObjectId(req.params.id));
   try {
     const item = await Item.findByIdAndDelete(ObjectId(req.params.id));
 
