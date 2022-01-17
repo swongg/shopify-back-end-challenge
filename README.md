@@ -9,7 +9,13 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 - Supports image upload and storage
 
 ### Screenshot
+
+**Frontend application**\
 ![shopify-backend-challenge](https://user-images.githubusercontent.com/46267622/149686278-43fbc0ec-9fc4-4c7f-b0b2-f6875de12537.jpg)
+
+**MongoDB database**\
+![image](https://user-images.githubusercontent.com/46267622/149705170-2203b9a2-1cb9-4e54-8837-17f9abb88d4d.png)
+
 
 ### Demo
 ![Demo](https://user-images.githubusercontent.com/46267622/149700902-246db545-09e0-43ee-a572-740d3ed14324.gif)
