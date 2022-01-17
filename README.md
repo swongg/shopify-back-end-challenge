@@ -34,7 +34,6 @@ Clone the project ```git clone https://github.com/swongg/shopify-back-end-challe
 2. In the ```/server``` directory, create a file named .env and add ```PORT = 8080```
 3. In the ```/server/db``` directory, create a .env file and add 
 ```DB_URL="mongodb+srv://<username>:<password>@cluster0.xfgzh.mongodb.net/databasename?retryWrites=true&w=majority"```
-
 \
 Please note to replace **username**, **password** and **databasename** with your db cluster's actual values
 4. In the ```/server/controllers``` directory, create a .env file and add ```AWS_ACCESS_KEY_ID=""``` and ```AWS_SECRET_ACCESS_KEY=""```. Replace the empty strings with your AWS credentials which can be found by following these [instructions](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
