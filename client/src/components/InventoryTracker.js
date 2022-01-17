@@ -51,6 +51,9 @@ const InventoryTracker = () => {
     <Box>
       <Box padding={2}>
         <TextField
+         inputProps={{
+          autoComplete: 'off'
+       }}
           required
           id="outlined-required"
           label="Inventory Name"
@@ -75,6 +78,9 @@ const InventoryTracker = () => {
       </Box>
       <Box padding={2}>
         <TextField
+         inputProps={{
+          autoComplete: 'off'
+       }}
           id="outlined-required"
           label="Category"
           value={category}
