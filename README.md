@@ -12,7 +12,7 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 ![shopify-backend-challenge](https://user-images.githubusercontent.com/46267622/149686278-43fbc0ec-9fc4-4c7f-b0b2-f6875de12537.jpg)
 
 ### Demo
-![Demo2](https://user-images.githubusercontent.com/46267622/149700722-99771aa2-b5bc-4290-a733-758638acf5e8.gif)
+![Demo](https://user-images.githubusercontent.com/46267622/149700902-246db545-09e0-43ee-a572-740d3ed14324.gif)
 
 ### Technologies used:
 - Node/Express backend
