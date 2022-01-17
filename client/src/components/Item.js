@@ -23,10 +23,10 @@ const Item = ({ itemData, setInventoryUpdate, inventoryUpdate }) => {
       <img src={itemData.imageUrl} alt="item"/>
       <Typography variant="h6">{`Stock: ${itemData.stock}`}</Typography>
       <Typography variant="h6">{`Category: ${itemData.category}`}</Typography>
-     
+
       <Button
         onClick={() => {
-          setModalOpen(true);
+          setModalOpen(!modalOpen);
         }}
       >
         Edit

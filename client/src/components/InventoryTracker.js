@@ -97,6 +97,7 @@ const InventoryTracker = () => {
         >
           <PhotoCamera />
         </IconButton>
+        <p>{image ? image.name : ""}</p>
       </label>
       <Box padding={2}>
         <Button onClick={handleSubmit} variant="outlined">
