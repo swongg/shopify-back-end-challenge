@@ -16,8 +16,8 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 **MongoDB database**\
 ![image](https://user-images.githubusercontent.com/46267622/149705170-2203b9a2-1cb9-4e54-8837-17f9abb88d4d.png)
 
-# Demo
-##![Demo3](https://user-images.githubusercontent.com/46267622/149706058-2b5a1f94-0cdc-422a-830c-9a261a23e8ff.gif)
+### Demo
+![Demo3](https://user-images.githubusercontent.com/46267622/149706058-2b5a1f94-0cdc-422a-830c-9a261a23e8ff.gif)
 
 ### Technologies used:
 - Node/Express backend
