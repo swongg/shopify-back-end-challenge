@@ -11,6 +11,9 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 ### Screenshot
 ![shopify-backend-challenge](https://user-images.githubusercontent.com/46267622/149686278-43fbc0ec-9fc4-4c7f-b0b2-f6875de12537.jpg)
 
+### Demo
+![Demo](https://user-images.githubusercontent.com/46267622/149700280-45e06e3a-de8d-4bef-8a1a-daf1c6c3e39d.gif)
+
 ### Technologies used:
 - Node/Express backend
 - AWS S3 for storing image thumbnails
