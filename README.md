@@ -27,6 +27,7 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 
 ### Installation and set up
 Clone the project ```git clone https://github.com/swongg/shopify-back-end-challenge.git```\
+
 **Backend**
 1. Go into the project directory and ```cd server```
 2. Run ```npm install```
