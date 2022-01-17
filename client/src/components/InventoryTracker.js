@@ -14,6 +14,7 @@ const InventoryTracker = () => {
   const [category, setCategory] = useState("");
   const [inventory, setInventory] = useState([]);
   const [inventoryUpdate, setInventoryUpdate] = useState([false]);
+  const [image, setImage] = useState(null);
 
   const Input = styled("input")({
     display: "none",
@@ -23,17 +24,27 @@ const InventoryTracker = () => {
     setName("");
     setStock(0);
     setCategory("");
+    setImage(null);
   };
 
   const handleSubmit = async () => {
-    await addItem(name, stock, category);
-    setInventoryUpdate(!inventoryUpdate);
-    clearStates();
+    if (name !== "" && category !== "") {
+      let formData = new FormData();
+      formData.append("image", image);
+      await addItem(name, stock, category, formData);
+      setInventoryUpdate(!inventoryUpdate);
+      clearStates();
+    } else {
+      alert("please provide the name and category");
+    }
   };
 
-  useEffect(async () => {
-    let inventoryArr = await getItems();
-    setInventory(inventoryArr);
+  useEffect(() => {
+    async function fetchInventoryData() {
+      let inventoryArr = await getItems();
+      setInventory(inventoryArr);
+    }
+    fetchInventoryData();
   }, [inventoryUpdate]);
 
   return (
@@ -71,7 +82,14 @@ const InventoryTracker = () => {
         />
       </Box>
       <label htmlFor="icon-button-file">
-        <Input accept="image/*" id="icon-button-file" type="file" />
+        <Input
+          onChange={(e) => {
+            setImage(e.target.files[0]);
+          }}
+          accept="image/*"
+          id="icon-button-file"
+          type="file"
+        />
         <IconButton
           color="primary"
           aria-label="upload picture"

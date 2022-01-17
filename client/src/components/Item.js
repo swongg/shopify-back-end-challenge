@@ -20,8 +20,10 @@ const Item = ({ itemData, setInventoryUpdate, inventoryUpdate }) => {
   return (
     <Box>
       <Typography variant="h5">{`Name: ${itemData.name}`}</Typography>
+      <img src={itemData.imageUrl} alt="item"/>
       <Typography variant="h6">{`Stock: ${itemData.stock}`}</Typography>
       <Typography variant="h6">{`Category: ${itemData.category}`}</Typography>
+     
       <Button
         onClick={() => {
           setModalOpen(true);
@@ -29,10 +31,16 @@ const Item = ({ itemData, setInventoryUpdate, inventoryUpdate }) => {
       >
         Edit
       </Button>
-      <Button onClick={handleDelete} >
-        Delete
-      </Button>
-      {modalOpen ? <EditModal itemData={itemData} setModalOpen={setModalOpen} handleEdit={handleEdit} /> : <Box />}
+      <Button onClick={handleDelete}>Delete</Button>
+      {modalOpen ? (
+        <EditModal
+          itemData={itemData}
+          setModalOpen={setModalOpen}
+          handleEdit={handleEdit}
+        />
+      ) : (
+        <Box />
+      )}
     </Box>
   );
 };
