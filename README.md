@@ -5,7 +5,7 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 - [challenge specifications](https://docs.google.com/document/d/1z9LZ_kZBUbg-O2MhZVVSqTmvDko5IJWHtuFmIu_Xg1A/edit#)
 
 ### Features
-- CREATE/READ/UPDATE/DELETE operations on inventory items
+- Create, Read, Update, Delete operations on inventory items
 - Supports image upload and storage
 
 ### Screenshot
