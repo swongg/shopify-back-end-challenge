@@ -9,7 +9,8 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 - Supports image upload and storage
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/46267622/148666783-3d9fa0ba-9776-4149-b6e3-a19f0b7aa4e4.png)
+![image][shopify-backend-challenge](https://user-images.githubusercontent.com/46267622/149686257-182e480f-85c0-4092-830f-b2e13067c72b.jpg)
+
 
 ## Technologies used:
 - Node/Express backend
