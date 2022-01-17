@@ -10,10 +10,10 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 
 ### Screenshot
 
-App\
+_App_\
 ![shopify-backend-challenge](https://user-images.githubusercontent.com/46267622/149686278-43fbc0ec-9fc4-4c7f-b0b2-f6875de12537.jpg)
 
-MongoDB\
+_MongoDB_\
 ![image](https://user-images.githubusercontent.com/46267622/149705170-2203b9a2-1cb9-4e54-8837-17f9abb88d4d.png)
 
 
