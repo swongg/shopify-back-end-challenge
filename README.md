@@ -34,7 +34,7 @@ Clone the project ```git clone https://github.com/swongg/shopify-back-end-challe
 \
 **Backend**
 1. In the project's ```/server``` directory, run ```npm install```
-2. In the ```/server/db``` directory, create a .env file and add\
+2. In the ```/server/db``` directory, create a file named .env and add\
 ```DB_URL="mongodb+srv://<username>:<password>@cluster0.xfgzh.mongodb.net/databasename?retryWrites=true&w=majority"```
 \
 Please note to replace **username**, **password** and **databasename** with your db cluster's actual values
