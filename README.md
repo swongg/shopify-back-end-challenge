@@ -26,8 +26,8 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 - An available [MongoDB cluster] (https://www.mongodb.com/atlas/database)
 
 ### Installation
-- 1) Clone the project ```git clone https://github.com/swongg/shopify-back-end-challenge.git```
-- 2) go into the project directory and cd server
-- 3) run ```npm install```
+1. Clone the project ```git clone https://github.com/swongg/shopify-back-end-challenge.git```
+2. go into the project directory and cd server
+3. run ```npm install```
 
 
