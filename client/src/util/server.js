@@ -8,11 +8,17 @@ export const getItems = async () => {
   return inventoryArr;
 };
 
-export const addItem = async (name, stock, category) => {
+export const addItem = async (name, stock, category, formData) => {
+  let imageUrl = "";
+  if (formData.get('image') !== 'null') {
+    imageUrl = await uploadImage(formData);
+  }
+
   await axios.post(`/item`, {
     name: name,
     stock: stock,
     category: category,
+    imageUrl: imageUrl,
   });
 };
 
@@ -26,4 +32,16 @@ export const editItem = async (id, name, stock, category) => {
     stock: stock,
     category: category,
   });
+};
+
+export const uploadImage = async (formData) => {
+  let response = await axios
+    .post("/image", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .catch((err) => console.log(err));
+
+  return response.data.imageUrl;
 };

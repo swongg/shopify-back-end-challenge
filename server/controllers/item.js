@@ -6,6 +6,7 @@ export const createItem = async (req, res) => {
     name: req.body.name,
     stock: req.body.stock,
     category: req.body.category,
+    imageUrl: req.body.imageUrl,
   });
 
   try {
