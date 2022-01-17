@@ -28,6 +28,7 @@ This is my submission to Shopify's Back End Developer Intern Challenge for Summe
 ### Installation and set up
 Clone the project ```git clone https://github.com/swongg/shopify-back-end-challenge.git```
 \
+\
 **Backend**
 1. In the project's ```/server``` directory, run ```npm install```
 2. In the ```/server``` directory, create a file named .env and add ```PORT = 8080```
